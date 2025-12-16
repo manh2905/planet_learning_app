@@ -5,6 +5,7 @@ import 'dart:ui'; // Cần import để dùng ImageFilter (Hiệu ứng mờ)
 import '../home/home_screen.dart';
 import '../explore/explore_screen.dart'; // Giả sử bạn có file này
 import '../quizz/quiz_screen.dart';       // Giả sử bạn có file này
+import '../chatbot/chatbot_screen.dart';  // AI Chatbot screen
 import '../account/account_screen.dart';   // Giả sử bạn có file này
 import '../../db.dart';
 
@@ -32,6 +33,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     ExploreScreen(),
     QuizScreen(),
+    ChatbotScreen(),  // AI Chatbot tab
     AccountScreen(),
   ];
 
@@ -110,6 +112,12 @@ class _MainScreenState extends State<MainScreen> {
                     icon: Icon(Icons.stars_outlined),
                     activeIcon: Icon(Icons.stars),
                     label: 'Quiz',
+                  ),
+                  BottomNavigationBarItem(
+                    // Icon AI cho Chatbot
+                    icon: Icon(Icons.psychology_outlined),
+                    activeIcon: Icon(Icons.psychology),
+                    label: 'AI Chat',
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.perm_identity),

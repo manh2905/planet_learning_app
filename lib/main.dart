@@ -19,6 +19,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'screens/main/main_screen.dart';
 
 // 1. Import file cấu hình do CLI tạo ra (Nếu báo đỏ dòng này, xem hướng dẫn bên dưới)
@@ -27,6 +28,9 @@ import 'firebase_options.dart';
 void main() async {
   // 2. Đợi Flutter Engine
   WidgetsFlutterBinding.ensureInitialized();
+
+  // 2.5. Load environment variables từ file .env
+  await dotenv.load(fileName: '.env');
 
   // 3. Khởi tạo Firebase với cấu hình từ CLI
   await Firebase.initializeApp(
